@@ -1,0 +1,22 @@
+                                        Table "public.services"
+   Column   |       Type        | Collation | Nullable |                    Default                    
+------------+-------------------+-----------+----------+-----------------------------------------------
+ service_id | integer           |           | not null | nextval('services_services_id_seq'::regclass)
+ name       | character varying |           |          | 
+Indexes:
+    "services_pkey" PRIMARY KEY, btree (service_id)
+Referenced by:
+    TABLE "appointments" CONSTRAINT "appointments_service_id_fkey" FOREIGN KEY (service_id) REFERENCES services(service_id)
+
+
+                         List of relations
+ Schema |              Name               |   Type   |    Owner     
+--------+---------------------------------+----------+--------------
+ public | appointments                    | table    | freecodecamp
+ public | appointments_appointment_id_seq | sequence | freecodecamp
+ public | customers                       | table    | freecodecamp
+ public | customers_customer_id_seq       | sequence | freecodecamp
+ public | services                        | table    | freecodecamp
+ public | services_services_id_seq        | sequence | freecodecamp
+(6 rows)
+
